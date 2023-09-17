@@ -19,3 +19,7 @@ class ProductPageLocators():
 class BasePageLocators():
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
+    OPEN_CART_FROM_MAIN_PAGE = (By.XPATH, '//span[@class="btn-group"]/a[@href="/ru/basket/"]')
+    OPEN_CART_FROM_PRODUCT_PAGE = (By.XPATH, '//span[@class="btn-group"]/a[@class="btn btn-default"]')
+    PRODUCT_PRESENCE_IN_CART = (By.XPATH, '//div[@class="basket-title hidden-xs"]')
+    EMPTY_CART_TEXT = (By.XPATH, '//div[@id="content_inner"]/p')
