@@ -10,7 +10,7 @@ class ProductCart(BasePage):
     def click_add_to_cart_button(self):
         add_to_cart_button = self.browser.find_element(*ProductPageLocators.ADD_TO_CART_BUTTON)
         add_to_cart_button.click()
-        BasePage.solve_quiz_and_get_code(self)
+        #BasePage.solve_quiz_and_get_code(self)
         time.sleep(3)
 
         product_name = self.browser.find_element(*ProductPageLocators.PRODUCT_NAME).text
