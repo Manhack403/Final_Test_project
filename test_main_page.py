@@ -6,6 +6,7 @@ from .pages.basket_page import BasketPage
 
 @pytest.mark.login_guest
 class TestLoginFromMainPage():
+@pytest.mark.need_review
 def test_guest_can_go_to_login_page(browser):
     link = "http://selenium1py.pythonanywhere.com/"
     page = MainPage(browser, link)
@@ -20,21 +21,18 @@ def test_guest_should_see_login_link(browser):
     page.open()
     page.should_be_login_link()
 
-@pytest.mark.skip
 def test_guest_can_see_login_link(browser):
     link = "http://selenium1py.pythonanywhere.com/"
     page = LoginPage(browser, link)
     page.open()
     page.should_be_login_url()
 
-@pytest.mark.skip
 def test_guest_can_see_login_form(browser):
     link = "http://selenium1py.pythonanywhere.com/"
     page = LoginPage(browser, link)
     page.open()
     page.should_be_login_form()
 
-@pytest.mark.skip
 def test_guest_can_see_registration_form(browser):
     link = "http://selenium1py.pythonanywhere.com/"
     page = LoginPage(browser, link)

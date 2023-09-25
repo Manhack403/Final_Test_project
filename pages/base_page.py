@@ -11,10 +11,10 @@ class BasePage():
     def __init__(self, browser, url, timeout=10):
         self.browser = browser
         self.url = url
-        #self.browser.implicitly_wait(timeout)
+
 
     def go_to_login_page(self):
-        link = self.browser.find_element(*BasePageLocators.LOGIN_LINK_INVALID)
+        link = self.browser.find_element(*BasePageLocators.LOGIN_LINK)
         link.click()
 
     def is_element_present(self, how, what):
@@ -52,11 +52,11 @@ class BasePage():
         cart = self.browser.find_element(*BasePageLocators.OPEN_CART_FROM_PRODUCT_PAGE)
         cart.click()
 
-    def should_be_login_link(self): #оиск ссылки логина
+    def should_be_login_link(self):
         assert self.is_element_present(*BasePageLocators.LOGIN_LINK), "Login link is not presented"
 
 
-    #def solve_quiz_and_get_code(self):                   #формула для вставки в алерт-сообщения
+    def solve_quiz_and_get_code(self):                   #формула для вставки в алерт-сообщения
         alert = self.browser.switch_to.alert
         x = alert.text.split(" ")[2]
         answer = str(math.log(abs((12 * math.sin(float(x))))))
